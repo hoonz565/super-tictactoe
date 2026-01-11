@@ -21,6 +21,3 @@ The game is played on a large 3x3 grid, where each square contains a smaller 3x3
 - **CSS3** (Styling, CSS Grid, Flexbox)
 - **JavaScript** (Game logic, DOM manipulation)
 - No external frameworks or libraries used.
-
-## 🚀 How to Play
-[Insert your GitHub Pages link here once you publish it]
