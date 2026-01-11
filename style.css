@@ -2,7 +2,7 @@
     --bg-color: #1e1e2e;
     --line-color: #45475a;
     --highlight: #313244;
-    --valid-zone: rgba(166, 227, 161, 0.15); /* Greenish highlight */
+    --valid-zone: rgba(166, 227, 161, 0.15); 
     --x-color: #89b4fa;
     --o-color: #f38ba8;
     --text-color: #cdd6f4;
@@ -42,7 +42,7 @@ h1 { margin-bottom: 10px; }
     background-color: var(--bg-color);
     width: 180px;
     height: 180px;
-    position: relative; /* For overlaying big X/O */
+    position: relative; 
 }
 
 /* Individual Cells */
@@ -105,8 +105,8 @@ button {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(30, 30, 46, 0.98); /* Màu nền tối che game */
-    z-index: 1000; /* Đảm bảo nó nằm trên cùng */
+    background-color: rgba(30, 30, 46, 0.98); 
+    z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -160,12 +160,10 @@ button {
     background-color: #74a1f5;
 }
 
-/* Class để ẩn overlay khi bấm nút Start */
 .hidden {
     display: none !important;
 }
 
-/* Chỉnh lại nút Reset cũ cho đỡ dính */
 .reset-btn {
     background-color: var(--line-color);
     color: white;

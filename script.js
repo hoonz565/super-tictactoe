@@ -1,4 +1,3 @@
-// --- GAME STATE ---
 const PLAYER_X = 'X';
 const PLAYER_O = 'O';
 let currentPlayer = PLAYER_X;
@@ -159,5 +158,5 @@ function startGame() {
     const overlay = document.getElementById('instruction-overlay');
     overlay.classList.add('hidden');
 }
-// Start
+
 init();
