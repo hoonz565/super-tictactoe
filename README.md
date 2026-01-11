@@ -23,4 +23,4 @@ The game is played on a large 3x3 grid, where each square contains a smaller 3x3
 - No external frameworks or libraries used.
 
 ## 🚀 How to Play
-\[[You can click here to play](https://hoonz565.github.io/super-tictactoe/)\]
+[![Play Game](https://img.shields.io/badge/PLAY_GAME-Click_Here_To_Start-success?style=for-the-badge&logo=google-chrome&logoColor=white)](https://hoonz565.github.io/super-tictactoe/)
