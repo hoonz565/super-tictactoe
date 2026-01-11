@@ -1,0 +1,173 @@
+:root {
+    --bg-color: #1e1e2e;
+    --line-color: #45475a;
+    --highlight: #313244;
+    --valid-zone: rgba(166, 227, 161, 0.15); /* Greenish highlight */
+    --x-color: #89b4fa;
+    --o-color: #f38ba8;
+    --text-color: #cdd6f4;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 { margin-bottom: 10px; }
+#status { margin-bottom: 20px; font-size: 1.2rem; }
+
+/* The Big 3x3 Grid */
+.super-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background-color: var(--line-color);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+/* The 9 Smaller Boards */
+.small-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2px;
+    background-color: var(--bg-color);
+    width: 180px;
+    height: 180px;
+    position: relative; /* For overlaying big X/O */
+}
+
+/* Individual Cells */
+.cell {
+    background-color: var(--highlight);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.cell:hover {
+    background-color: #45475a;
+}
+
+.cell.x { color: var(--x-color); }
+.cell.o { color: var(--o-color); }
+
+/* Highlight valid boards */
+.small-board.active {
+    background-color: var(--valid-zone);
+    box-shadow: 0 0 10px var(--valid-zone);
+    border: 2px solid #a6e3a1;
+}
+
+/* Overlay for won boards */
+.overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+    font-weight: 900;
+    background-color: rgba(30, 30, 46, 0.85);
+    pointer-events: none;
+}
+.overlay.winner-X { color: var(--x-color); }
+.overlay.winner-O { color: var(--o-color); }
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: var(--x-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #1e1e2e;
+    font-weight: bold;
+}
+
+/* --- INSTRUCTION OVERLAY STYLES --- */
+#instruction-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 30, 46, 0.98); /* Màu nền tối che game */
+    z-index: 1000; /* Đảm bảo nó nằm trên cùng */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+}
+
+#instruction-overlay .content {
+    max-width: 600px;
+    padding: 40px;
+    background-color: #313244;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    text-align: left;
+}
+
+#instruction-overlay h1 {
+    margin-top: 0;
+    color: var(--x-color);
+    text-align: center;
+}
+
+#instruction-overlay .rules {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+#instruction-overlay ul {
+    background: rgba(0,0,0,0.2);
+    padding: 15px 30px;
+    border-radius: 8px;
+    border-left: 4px solid var(--o-color);
+}
+
+#instruction-overlay button {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    margin-top: 10px;
+    background-color: var(--x-color);
+    color: #1e1e2e;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+#instruction-overlay button:hover {
+    transform: scale(1.02);
+    background-color: #74a1f5;
+}
+
+/* Class để ẩn overlay khi bấm nút Start */
+.hidden {
+    display: none !important;
+}
+
+/* Chỉnh lại nút Reset cũ cho đỡ dính */
+.reset-btn {
+    background-color: var(--line-color);
+    color: white;
+    margin-top: 30px;
+}
