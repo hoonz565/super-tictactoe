@@ -169,3 +169,37 @@ button {
     color: white;
     margin-top: 30px;
 }
+
+@media (max-width: 600px) {
+    .small-board {
+        width: 100px;
+        height: 100px;
+    }
+
+    .super-board {
+        gap: 5px;
+        padding: 5px;
+    }
+
+    .cell {
+        font-size: 18px;
+    }
+
+    .overlay {
+        font-size: 60px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+    #status {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    
+    #instruction-overlay .content {
+        padding: 20px;
+        margin: 15px;
+        font-size: 14px;
+    }
+}
